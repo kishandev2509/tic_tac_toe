@@ -1,0 +1,22 @@
+@mixin cross ($degree){
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 3vh;
+    width: 12vh;
+    background-color: black;
+    content: "";
+    transform:rotate($degree*1deg);
+}
+
+@mixin circle ($diameter,$color){
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: $diameter;
+    width: $diameter;
+    border-radius: 50%;
+    background-color: $color;
+    content: "";
+}
+

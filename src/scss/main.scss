@@ -1,0 +1,47 @@
+@import "mixin";
+
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.board {
+  background-color: aquamarine;
+  height: 60vh;
+  width: 60vh;
+}
+
+.row {
+  height: 20vh;
+}
+
+.square {
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cross {
+  margin-left: -5rem;
+  margin-top: -1rem;
+  &::before {
+    @include cross(45);
+  }
+  &::after {
+    @include cross(-45);
+  }
+}
+
+.circle {
+  margin-left: -5rem;
+  margin-top: -4.5rem;
+  &::before {
+    @include circle(12vh, black);
+  }
+  &::after {
+    @include circle(6vh, #7fffd4);
+    margin-top: 3vh;
+    margin-left: 3vh;
+  }
+}
