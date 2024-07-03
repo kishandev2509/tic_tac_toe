@@ -1,12 +1,13 @@
-@mixin cross ($degree){
+@mixin cross ($degree, $height:1rem){
     justify-content: center;
     align-items: center;
     position: absolute;
-    height: 3vh;
-    width: 12vh;
+    height: $height;
+    width: $height*5;
     background-color: black;
     content: "";
     transform:rotate($degree*1deg);
+    z-index: 20;
 }
 
 @mixin circle ($diameter,$color){
@@ -19,4 +20,3 @@
     background-color: $color;
     content: "";
 }
-

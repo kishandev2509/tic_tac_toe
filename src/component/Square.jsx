@@ -1,8 +1,9 @@
 import React from "react";
+
 const Square = ({ position, element: Element, onClickFunction }) => {
   return (
     <div
-      className="col-xs-4 col-sm-4 square"
+      className="col-4 square"
       data-position={position}
       onClick={(e) => {
         onClickFunction(e);
@@ -12,4 +13,5 @@ const Square = ({ position, element: Element, onClickFunction }) => {
     </div>
   );
 };
+
 export default Square;

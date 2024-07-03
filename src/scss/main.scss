@@ -1,25 +1,33 @@
 @import "mixin";
 
+$BoardSize: min(60vh, 60vw);
+$BodyBg: #a683d4;
+
 * {
   box-sizing: border-box;
   overflow: hidden;
+  font-size: 2vh;
+}
+
+body {
+  background-color: $BodyBg !important;
 }
 
 .board {
   background-color: aquamarine;
-  height: 60vh;
-  width: 60vh;
-}
+  height: $BoardSize;
+  width: $BoardSize !important;
 
-.row {
-  height: 20vh;
-}
+  .row {
+    height: min(20vh, 20vw);
 
-.square {
-  border: 1px solid white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    .square {
+      border: 1px solid $BodyBg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .cross {
@@ -37,11 +45,59 @@
   margin-left: -5rem;
   margin-top: -4.5rem;
   &::before {
-    @include circle(12vh, black);
+    @include circle(5rem, black);
   }
   &::after {
-    @include circle(6vh, #7fffd4);
-    margin-top: 3vh;
-    margin-left: 3vh;
+    @include circle(3rem, #7fffd4);
+    margin-top: 1rem;
+    margin-left: 1rem;
   }
+}
+
+.playerBox {
+  width: min(80vh, 80vw) !important;
+  .row {
+    .row {
+      div {
+        input {
+          font-size: 1.5rem;
+          width: 100%;
+        }
+      }
+        #cross {
+          &::before {
+            @include cross(45, 0.5rem);
+            transform: translate(-1rem) rotate(45deg);
+          }
+          &::after {
+            @include cross(-45, 0.5rem);
+            transform: translate(-1rem) rotate(-45deg);
+          }
+        }
+        #circle {
+          &::before {
+            @include circle(2.5rem, black);
+            transform: translate(-1rem,-1rem);
+          }
+          &::after {
+            @include circle(1.5rem, #a683d4);
+            margin: 0.5rem;
+            transform: translate(-1rem,-1rem);
+          }
+        }
+      }
+    
+    .col-3 {
+      button {
+        font-size: 1.5rem;
+        text-wrap: nowrap;
+      }
+    }
+  }
+}
+
+.header{
+  p{
+  font-size: 1.5rem;}
+  font-weight: 600;
 }
