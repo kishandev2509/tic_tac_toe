@@ -6,7 +6,7 @@ $BodyBg: #a683d4;
 * {
   box-sizing: border-box;
   overflow: hidden;
-  font-size: 2vh;
+  font-size: min(2vh,2vw);
 }
 
 body {
